@@ -23,6 +23,6 @@ public class HelloController {
 
     @MyRequestMapping("/test")
     public void test(HttpServletRequest req, HttpServletResponse resp , String name) throws Exception{
-        resp.getWriter().write( "Hello,"+helloService.sayHello(name));
+        resp.getWriter().write( "Hello,"+helloService.sayHello(name)+" !");
     }
 }

@@ -35,9 +35,9 @@ public class MyDispatcherServlet extends HttpServlet {
 
     private List<String> classList = new ArrayList<>();                 //指定路径下的所有类的全额类名
 
-    private Map<String, Object> ioc = new HashMap<>();                  //模拟ioc容器，key-
+    private Map<String, Object> ioc = new HashMap<>();                  //模拟ioc容器，key-class的类名(首字母小写),value-实例对象
 
-    private Map<String,Method> handlerMapping = new HashMap<>();        //保存
+    private Map<String,Method> handlerMapping = new HashMap<>();        //保存url与执行方法的映射关系
 
 
     //通过注解获取application.yml中的扫描包路径
@@ -52,7 +52,7 @@ public class MyDispatcherServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try{
-            doDispatcher(request,response);     //调用doPost方法，发射调用，将结果返回至浏览器
+            doDispatcher(request,response);     //调用doPost方法，反射调用，将结果返回至浏览器
         }catch (Exception e){
             e.printStackTrace();
             response.getWriter().write("500 Exception happened in this server!");
