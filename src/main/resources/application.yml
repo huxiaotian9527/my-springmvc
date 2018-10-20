@@ -1,0 +1,10 @@
+#自定义注解扫描包范围
+project:
+    scan: com.hu.framework.myspringmvc
+
+server:
+    port: 8080
+#    servlet:
+#      context-path: /store
+#logging:
+#  config: classpath:logback-spring.xml
